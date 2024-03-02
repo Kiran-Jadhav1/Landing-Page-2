@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Js -->
+    <link rel="stylesheet" href="js/index.js">
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#000000c7">
+        <div class="container-fluid">
+            <div class="col"><a class="navbar-brand" href="#">Landing Page</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="col text-end"> <!-- Use justify-content-end class here -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav" style="margin-inline-start: 50%;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-telephone"
+                                    style="color: white;"> : </i>1234567890</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"> <i class="fa-brands fa-whatsapp"
+                                    style="color: green;"></i> :1234567890</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Container -->
+    <div class="container-fliud">
+        <div class="row justify-content-evenly pt-4 pb-3">
+            <div class="col-md-5">
+                <h2 class="mb-3" style="margin-top: 10%;">Introducing......</h2>
+                <p>Get Your PSARA License in Minimal Time with Corpbiz!</p>
+                <p>Coprbiz will help you in documentation, preparation, filing & subsequent follow-up for the PSARA
+                    License to start a Private Security Agency in India. The PSARA License is mandatory for an agency to
+                    deploy security guards and engage in security-related services in India.</p>
+                <button style="background-color:skyblue; color:black; border-radius: 5px; width:100px">lorem</button>
+                <button style="background-color:#000000c7;color:white; border-radius: 5px; width:60px">></button>
+
+
+            </div>
+<!-- second  -->
+            <div class="col-md-3  border form" style="border-color: black;">
+                <h3 class="mb-3 text-center" style="background-color:black; border-radius: 50%"> <span
+                        style="color: white;">Get Expert Guidance</span></h3>
+                <!-- form -->
+                <form id="form">
+                    <div class="mb-1 ">
+                        <label for="For Name" name="Your Name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="your-name" style="border-color: black;"
+                            placeholder="Enter Your Full Name" required>
+                    </div>
+                    <div class="mb-1">
+                        <label for="exampleInputEmail1" name="Email Address" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="Email Address" aria-describedby="emailHelp"
+                            style="border-color: black;" placeholder="Enter Your Email Address" required>
+
+                    </div>
+                    <div class="mb-1">
+                        <label for="For Name" name="Phone No" class="form-label">Phone No</label>
+                        <input type="tel" class="form-control" id="Phone No" style="border-color: black;"
+                            placeholder="Enter Your Phone No" required maxlength="10">
+                    </div>
+                    <div class="mb-1">
+                        <label for="Select State" name="State" id="State">Select State </label>
+                        <select class="form-select" aria-label="Disabled select example" style="border-color: black;">
+                            <label for="">Select State</label>
+                            <option selected>Select State</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select> <br>
+                    </div>
+                    <center>
+                        <button type="submit" name="Get Started" id="submit" class="btn btn-danger" class="text-center"
+                            style="background-color: black;">Get Started</button> <br>
+                    </center>
+                    <p><strong>Note:</strong>Get Quick call back From Our Expert</p>
+                </form>
+            </div>
+            <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxKe9qZ02ZWrGPwLbKzvhfsLcIzBZqaGQ1JlkqQjc7hgiX2lEBG3hY2bxzoU5vFJdjbkg/exec'
+                const form = document.getElementById("form");
+                form.addEventListener('submit', e => {
+                    e.preventDefault();
+                    let name = document.getElementById("your-name").value;
+                    let body = {
+                        name
+                    }
+                    fetch(scriptURL, { method: 'POST', body: body })
+                        .then(response => console.log('Success!', response))
+                        .then(() => { window.location.reload(); })
+                        .catch(error => console.error('Error!', error.message))
+                })
+                // fetch('https://httpbin.org/post', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Accept': 'application/json, text/plain, */*',
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify({ a: 7, str: 'Some string: &=&' })
+                // }).then(res => res.json())
+                //     .then(res => console.log(res));
+
+
+
+
+            </script>
+        </div>
+
+        <!-- Next -->
+        <div class="row justify-content-evenly  pt-3 pb-3" style="background-color:#000000c7;">
+            <div class="col-md-8">
+                <div class="row justify-content-evenly text-center " style="background-color: white;">
+                    <div class="col-md-3 mt-4 ">
+                        <h1><i class="bi bi-globe-asia-australia"></i> </h1>
+                        <h5>22+</h5>
+                        <p style="color:black">global Branch</p>
+                    </div>
+                    <div class="col-md-3 mt-4 ">
+                        <h1><i class="bi bi-person-circle"></i></h1>
+                        <h5>22+</h5>
+                        <p style="color:black">global Branch</p>
+                    </div>
+                    <div class="col-md-3 mt-4 ">
+                        <h1> <i class="bi bi-people-fill"></i></h1>
+                        <h5>22+</h5>
+                        <p style="color:black">global Branch</p>
+                    </div>
+
+                    <div class="col-md-3 mt-4 ">
+                        <h1><i class="bi bi-briefcase"></i></h1>
+                        <h5>22+</h5>
+                        <p style="color:black">global Branch</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Overview -->
+        <div class="row justify-content-evenly pt-4 pb-4">
+            <div class="col-md-10">
+                <h2 class="text-center " style="color: rgb(228, 167, 22);">Overview</h2>
+                <h1 class="text-center" style="color: black;">Overview of PSARA License in India</h1>
+                <p class="text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptate ratione
+                    dolorum, quasi quae placeat consequatur omnis magni illo tempore inventore dolor reiciendis
+                    adipisci. Nisi sunt eum asperiores architecto vel nobis tempore? Molestiae quae illo eos incidunt
+                    aliquam! Eius sapiente cum harum molestias, doloremque aut consectetur amet aliquid non vero
+                    repellat voluptate nobis iusto error omnis adipisci repudiandae. Quam consequuntur laborum illum
+                    molestias assumenda dolorem voluptatum delectus debitis quaerat possimus obcaecati commodi, quis
+                    nesciunt eligendi aut facere cupiditate minus eveniet excepturi nobis cumque animi? Earum mollitia
+                    expedita, voluptatum illum laboriosam, accusamus alias aut aspernatur vitae praesentium iure
+                    laudantium ab repellat.</p>
+            </div>
+        </div>
+        <!-- eligibility -->
+        <div class="row justify-content-evenly pt-5 pt-5 " style="background-color: #000000c7">
+            <div class="col-md-8 mt-5">
+                <h1 class="text-center text-white">Eligibility Criteria for PSARA License in India</h1>
+                <p class="text-center mt-3 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                    quas numquam dicta eos at in deleniti voluptatibus, quidem dolore officiis obcaecati rerum ad quod
+                    ab voluptate ratione hic quasi itaque! Qui animi dolore ducimus facilis, rem sed quis reprehenderit
+                    inventore ab officiis porro, atque quam, hic quisquam velit ut! Voluptate, ex cupiditate fugit
+                    nesciunt excepturi nulla eligendi, expedita quas possimus velit magni? Adipisci mollitia reiciendis
+                    odio error, ratione sed ad nihil, omnis veniam illum dolores asperiores cumque id rem dolorum soluta
+                    non maiores. Voluptatem similique alias, maiores eum, ratione eveniet sapiente, sint aut quae
+                    temporibus quibusdam totam labore fugit laborum.</p>
+                <!-- FAQ -->
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Accordion Item #1
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion
+                                body.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion
+                                body. Let's imagine this being filled with some actual content.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion
+                                body. Nothing more exciting happening here in terms of content, but just filling up the
+                                space to make it look, at least at first glance, a bit more representative of how this
+                                would look in a real-world application.</div>
+                        </div>
+                    </div>
+                </div> <br> <br>
+            </div>
+        </div>
+        <!-- Document Required -->
+        <div class="row justify-content-evenly pt-4 pb-4">
+            <div class="col-md-8">
+                <h2 class="text-center">Documents Required for PSARA License in India></h2>
+                <p class="text-center">Although the documents required vary from one state to another, Corpbiz will help
+                    you in preparing all the documents. However, some of the standard documents needed for obtaining a
+                    PSARA License are mentioned below:</p> <br>
+                <ul>
+                    <li>PAN Card</li>
+                    <li>GST Registration Certificate</li>
+                    <li>Employees State Insurance (ESI) Registration</li>
+                    <li> Contractual Labour Act registration letter</li>
+                    <li>Provident Fund (PF) Registration</li>
+                    <li>Shops & Establishment act Registration</li>
+                    <li>Certificate of Incorporation</li>
+                    <li>Income Tax Returns of directors</li>
+                    <li>Address proof of the Registered Office</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Procedure -->
+        <div class="row justify-content-evenly pt-4 pb-4" style="background-color:#000000c7;">
+            <div class="col-md-10" style="color: white;">
+                <h2 class="text-center mt-2">Procedure for PSARA License</h2>
+                <p class="text-center">The Procedure for obtaining PSARA License involved complex licensing
+                    requirements, application filing & documentation. It is, therefore, imperative for business
+                    structure, security gurad, etc., to carefully handle the registration process by opting for the help
+                    of seasoned PSARA consultants near them. The following steps are involved in the PSARA Licensing
+                    process: <br> <br>
+                <div class="row justify-content-evenly">
+                    <div class="col-md-5">
+                        <h4>All the documents must be maintained</h4>
+                        <p>All the documents must be organized and collected according to the requirement and must be
+                            submitted. Our experts will help you arranging & maintaining all the documents for PSARA
+                            License. </p>
+                        <br>
+                        <h4>All the documents must be maintained</h4>
+                        <p>All the documents must be organized and collected according to the requirement and must be
+                            submitted. Our experts will help you arranging & maintaining all the documents for PSARA
+                            License. </p>
+                        <br>
+                        <h4>All the documents must be maintained</h4>
+                        <p>All the documents must be organized and collected according to the requirement and must be
+                            submitted. Our experts will help you arranging & maintaining all the documents for PSARA
+                            License. </p>
+                        <br>
+                        <h4>All the documents must be maintained</h4>
+                        <p>All the documents must be organized and collected according to the requirement and must be
+                            submitted. Our experts will help you arranging & maintaining all the documents for PSARA
+                            License. </p>
+                        <br>
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <img src="img/procedure-image.png" alt=" images" width="100%">
+                    </div>
+                </div>
+
+                </p>
+            </div>
+        </div>
+        <!-- Registration -->
+        <div class="row justify-content-evenly pt-5 pb-2">
+            <div class="col-md-10">
+                <h2 class="text-center mt-3">PSARA Registration Services in India at Corpbiz</h2>
+                <div class="row justify-content-evenly pt-5 pb-5">
+                    <div class="col-md-3">
+                        <div class="card border" style="width:15px 18rem;">
+                            <img src="img/serviceicon1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width:15px 18rem;">
+                            <img src="img/serviceicon2.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width:15px 18rem;">
+                            <img src="img/serviceicon3.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- our network -->
+        <div class="row justify-content-evenly pt-2 pb-2" style="background-color: #000000c7;">
+                <h2 class="text-center mt-2 text-white">Our Network</h2>
+                <div class="row text-center p-4" >
+                    <div class="col-md-2 mt-2"><img src="img/20180628020724_bank-of-maharastra.jpg" alt="" width="100%"></div>
+                    <div class="col-md-2 mt-2"><img src="img/20180628020803_DHFL.jpg" alt="" width="100%"></div>
+                    <div class="col-md-2 mt-2"> <img src="img/20180628020838_30fbric.jpg" alt="" width="100%"></div>
+                    <div class="col-md-2 mt-2"> <img src="img/20180628020851_ku.jpg" alt="" width="100%"></div>
+                    <div class="col-md-2 mt-2"> <img src="img/20180628020904_stripe.jpg" alt="" width="100%"></div>
+                    <div class="col-md-2 mt-2"> <img src="img/20180628020904_stripe.jpg" alt="" width="100%"></div>
+                </div>
+        </div>
+        <!-- Review -->
+        <section style="margin-top: 3%;">
+            <center>
+                <div>
+                    <h1>Our Customer Feedbacks</h1>
+                    <p>Don’t take our word for it. Trust our customers</p>
+                </div>
+            </center>
+        </section>
+        <section class="review">
+        <div class="row">
+           <div class="col-md-4">
+            <div class="card">
+                <img src="./img/thumb_20180624103116_A.jpeg" alt="John">
+                <h1>John Doe</h1>
+                <p class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ducimus, explicabo
+                    sapiente quia consequatur, distinctio consectetur iusto atque repellat earum facere, hic nihil
+                    cupiditate suscipit.</p>
+
+                <p><button>Contact</button></p>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="card">
+                <img src="./img/thumb_20180624103116_A.jpeg" alt="John">
+                <h1>John Doe</h1>
+                <p class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ducimus, explicabo
+                    sapiente quia consequatur, distinctio consectetur iusto atque repellat earum facere, hic nihil
+                    cupiditate suscipit.</p>
+
+                <p><button>Contact</button></p>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="card">
+                <img src="./img/thumb_20180624103116_A.jpeg" alt="John">
+                <h1>John Doe</h1>
+                <p class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ducimus, explicabo
+                    sapiente quia consequatur, distinctio consectetur iusto atque repellat earum facere, hic nihil
+                    cupiditate suscipit.</p>
+
+                <p><button>Contact</button></p>
+            </div>
+           </div>
+        </div>
+        </section>
+        <!-- footer -->
+        <div class="row justify-content-evenly  text-white pt-2 pb-5" style="background-color: #000000c7;">
+            <div class="col-md-4 pt-4">
+                <h3 class="pb-2"> Landing Page</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, facere.</p>
+
+            </div>
+            <div class="col-md-4 pt-4 ">
+                <h3 class="pb-2">Contact Us</h3>
+                <p>address</p>
+            </div>
+
+        </div>
+
+        <!-- copyright -->
+        <div class="row bg: text-center text-black pb-2 " style="background-color:white">
+            <div class="col-12">
+                <p> copyright @2023</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Container -->
+    </div>
+
+
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
